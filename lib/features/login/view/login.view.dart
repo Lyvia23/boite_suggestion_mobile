@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:boite_suggestion/components/Custom.suggestion.listes.dart';
+import 'package:boite_suggestion/components/app.radio.dart';
+import 'package:boite_suggestion/components/app.searchbar.dart';
 import 'package:boite_suggestion/components/custom.app.entete.dart';
 import 'package:boite_suggestion/components/custom.button.dart';
 import 'package:boite_suggestion/components/custom.text.fields.dart';
@@ -20,44 +22,53 @@ class LoginView extends GetView<LoginController> {
         return SafeArea(
           child: Scaffold(
             body: Container(
-              child: Column(mainAxisSize: MainAxisSize.min, children: [
-                // SearchBarAction(
-                //   title: 'Boite à suggestion',
-                // ),
-                CustomAppEntete(title: 'suggestion',
-                onTap: () {
-                  Get.back();
-                },
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: CustomButton(
-                    title: 'Ajouter',
+              child: SingleChildScrollView(
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+                  SearchBarAction(
+                    title: 'Boite à suggestion',
                   ),
-                ),
-               
-
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: CustomTextField(
-                    hintText: 'login',
-                    prefixIcon: Icon(Icons.person),
+                  SizedBox(height: 10),
+                  CustomAppEntete(title: 'suggestion',
+                  onTap: () {
+                    Get.back();
+                  },
                   ),
-                ),
-
-                SuggestionList(image: 'assets/images/avatar.png', title: 'afficher', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
-                color: Palette.hintColorList,
-                ),
-                CustomSuggestionsList(image: 'assets/images/sport.png', title: 'Sport', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
-                color: Palette.hintColorList, titleTextButton: 'voir plus', profile: 'assets/images/avatar.png', nomutilisateur: 'Joyce Pokam',
-                )
-
+                  SizedBox(
+                    height: 15,
+                  ),
                 
-              ]),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: CustomButton(
+                      title: 'Ajouter',
+                    ),
+                  ),
+                 
+                
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: CustomTextField(
+                      hintText: 'login',
+                      prefixIcon: Icon(Icons.person),
+                    ),
+                  ),
+                
+                  SuggestionList(image: 'assets/images/avatar.png', title: 'afficher', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
+                  color: Palette.hintColorList,
+                  ),
+                  CustomSuggestionsList(image: 'assets/images/sport.png', title: 'Sport', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
+                  color: Palette.hintColorList, titleTextButton: 'voir plus', profile: 'assets/images/avatar.png', nomutilisateur: 'Joyce Pokam',
+                  ),
+                
+                
+                  Divider(),
+                
+                  CustomRadio(onChanged: (value){
+                    controller.onChangeValue(value);
+                  }, groupvalue: 'statut suggestion', value: 'public', title: 'public')
+                  
+                ]),
+              ),
             ),
           ),
         );
