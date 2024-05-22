@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:boite_suggestion/components/Custom.suggestion.listes.dart';
+import 'package:boite_suggestion/components/app.botton.navigation.dart';
 import 'package:boite_suggestion/components/app.radio.dart';
 import 'package:boite_suggestion/components/app.searchbar.dart';
 import 'package:boite_suggestion/components/custom.app.entete.dart';
@@ -24,49 +25,52 @@ class LoginView extends GetView<LoginController> {
             body: Container(
               child: SingleChildScrollView(
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  SearchBarAction(
-                    title: 'Boite à suggestion',
-                  ),
-                  SizedBox(height: 10),
-                  CustomAppEntete(title: 'suggestion',
-                  onTap: () {
-                    Get.back();
-                  },
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
+                  // SearchBarAction(
+                  //   title: 'Boite à suggestion',
+                  // ),
+                  // SizedBox(height: 10),
+                  // CustomAppEntete(title: 'suggestion',
+                  // onTap: () {
+                  //   Get.back();
+                  // },
+                  // ),
+                  // SizedBox(
+                  //   height: 15,
+                  // ),
                 
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: CustomButton(
-                      title: 'Ajouter',
-                    ),
-                  ),
+                  // Container(
+                  //   padding: EdgeInsets.all(10),
+                  //   child: CustomButton(
+                  //     title: 'Ajouter',
+                  //   ),
+                  // ),
                  
                 
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: CustomTextField(
-                      hintText: 'login',
-                      prefixIcon: Icon(Icons.person),
-                    ),
-                  ),
+                  // Container(
+                  //   padding: EdgeInsets.all(10),
+                  //   child: CustomTextField(
+                  //     hintText: 'login',
+                  //     prefixIcon: Icon(Icons.person),
+                  //   ),
+                  // ),
                 
-                  SuggestionList(image: 'assets/images/avatar.png', title: 'afficher', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
-                  color: Palette.hintColorList,
-                  ),
-                  CustomSuggestionsList(image: 'assets/images/sport.png', title: 'Sport', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
-                  color: Palette.hintColorList, titleTextButton: 'voir plus', profile: 'assets/images/avatar.png', nomutilisateur: 'Joyce Pokam',
-                  ),
+                  // SuggestionList(image: 'assets/images/avatar.png', title: 'afficher', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
+                  // color: Palette.hintColorList,
+                  // ),
+                  // CustomSuggestionsList(image: 'assets/images/sport.png', title: 'Sport', paragraph: "Jessy a fait une nouvelle suggestion dans la catégorie sport", onTap:() {}, heure: 'A 10h00',
+                  // color: Palette.hintColorList, titleTextButton: 'voir plus', profile: 'assets/images/avatar.png', nomutilisateur: 'Joyce Pokam',
+                  // ),
                 
                 
+                  // Divider(),
+                
+                  // CustomRadio(onChanged: (value){
+                  //   controller.onChangeValue(value);
+                  // }, groupvalue: 'statut suggestion', value: 'public', title: 'public'),
+                 
                   Divider(),
-                
-                  CustomRadio(onChanged: (value){
-                    controller.onChangeValue(value);
-                  }, groupvalue: 'statut suggestion', value: 'public', title: 'public')
-                  
+
+                  CustomBottonNavigation()
                 ]),
               ),
             ),
